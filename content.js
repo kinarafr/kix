@@ -288,38 +288,6 @@ svg[data-ds-icon*="check" i],
   color: ${color} !important;
 }
 
-/* ======================================================== */
-/* Preserve Original Colors for Mod & Sub Icons/Badges     */
-/* ======================================================== */
-[data-testid*="identity-badge-moderator" i],
-[data-testid*="identity-badge-moderator" i] *,
-[data-testid*="identity-badge-subscriber" i],
-[data-testid*="identity-badge-subscriber" i] *,
-[data-badge*="moderator" i],
-[data-badge*="moderator" i] *,
-[data-badge*="subscriber" i],
-[data-badge*="subscriber" i] *,
-svg[data-ds-icon*="Moderator" i],
-svg[data-ds-icon*="Moderator" i] *,
-svg[data-ds-icon*="Subscriber" i],
-svg[data-ds-icon*="Subscriber" i] *,
-svg[data-ds-icon="ModeratorBadge"],
-svg[data-ds-icon="ModeratorBadge"] *,
-svg[data-ds-icon="SubscriberBadge"],
-svg[data-ds-icon="SubscriberBadge"] *,
-svg[data-ds-icon="SubBadge"],
-svg[data-ds-icon="SubBadge"] * {
-  color: initial !important;
-}
-
-svg[data-ds-icon*="Moderator" i] stop,
-svg[data-ds-icon*="Subscriber" i] stop,
-linearGradient[id*="ModeratorBadge" i] stop,
-linearGradient[id*="moderator" i] stop,
-radialGradient[id*="SubscriberBadge" i] stop,
-radialGradient[id*="subscriber" i] stop {
-  stop-color: revert !important;
-}
 
 /* Verified badge background paths/shapes */
 svg[data-ds-icon*="Verified" i] path:not([fill="#000"]):not([fill="#000000"]):not([fill="black"]):not([fill="#fff"]):not([fill="#ffffff"]),
