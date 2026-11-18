@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kix</title>
+  <link rel="icon" type="image/png" href="icons/icon32.png">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="kix-container">
+    <!-- Header -->
+    <header class="kix-header">
+      <div class="kix-brand">
+        <img class="kix-brand-logo" src="icons/icon32.png" alt="Kix Logo" width="22" height="22">
+        <h1 class="kix-title">Kix</h1>
+        <div class="kix-logo-dot" id="headerDot" title="Active Accent Dot"></div>
+      </div>
+      <div class="kix-preview-badge" id="previewBadge" title="Current Accent Preview">
+        <span class="preview-swatch" id="previewSwatch"></span>
+        <span class="preview-hex" id="previewHex">#53FC18</span>
+      </div>
+    </header>
+
+    <!-- Sample Colors / Presets -->
+    <section class="kix-section">
+      <label class="section-label">Sample Colors</label>
+      <div class="sample-colors-grid" id="presetContainer">
+        <button type="button" class="sample-swatch" data-color="#53FC18" title="Kick Green (Default)" style="--swatch-color: #53FC18;"></button>
+        <button type="button" class="sample-swatch" data-color="#00D2EF" title="Cyber Cyan" style="--swatch-color: #00D2EF;"></button>
+        <button type="button" class="sample-swatch" data-color="#007AFF" title="Electric Blue" style="--swatch-color: #007AFF;"></button>
+        <button type="button" class="sample-swatch" data-color="#A855F7" title="Neon Purple" style="--swatch-color: #A855F7;"></button>
+        <button type="button" class="sample-swatch" data-color="#FF2D55" title="Hot Pink" style="--swatch-color: #FF2D55;"></button>
+        <button type="button" class="sample-swatch" data-color="#FF3B30" title="Crimson Red" style="--swatch-color: #FF3B30;"></button>
+        <button type="button" class="sample-swatch" data-color="#FF9500" title="Sunset Orange" style="--swatch-color: #FF9500;"></button>
+        <button type="button" class="sample-swatch" data-color="#FFCC00" title="Sunshine Gold" style="--swatch-color: #FFCC00;"></button>
+      </div>
+    </section>
+
+    <!-- Recently Used Colors -->
+    <section class="kix-section" id="recentSection">
+      <div class="label-row">
+        <label class="section-label">Recently Used</label>
+        <span class="input-hint" id="recentHint">Recent (max 8)</span>
+      </div>
+      <div class="sample-colors-grid recent-colors-grid" id="recentContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Hex Input -->
+    <section class="kix-section">
+      <div class="label-row">
+        <label for="hexInput" class="section-label">Hex Color</label>
+        <span class="input-hint" id="hexHint">Paste or type code</span>
+      </div>
+      <div class="hex-input-wrapper">
+        <span class="hex-prefix">#</span>
+        <input 
+          type="text" 
+          id="hexInput" 
+          class="hex-input" 
+          placeholder="53FC18" 
+          maxlength="7" 
+          spellcheck="false"
+          autocomplete="off"
+        />
+        <button type="button" class="hex-paste-btn" id="pasteBtn" title="Paste from clipboard">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- HSL Sliders -->
+    <section class="kix-section sliders-section">
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-name">Hue</span>
+          <span class="slider-val" id="hueVal">102°</span>
+        </div>
+        <input type="range" id="hueSlider" class="color-slider hue-track" min="0" max="360" value="102" step="1">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-name">Saturation</span>
+          <span class="slider-val" id="satVal">97%</span>
+        </div>
+        <input type="range" id="satSlider" class="color-slider sat-track" min="0" max="100" value="97" step="1">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span class="slider-name">Lightness</span>
+          <span class="slider-val" id="lightVal">54%</span>
+        </div>
+        <input type="range" id="lightSlider" class="color-slider light-track" min="0" max="100" value="54" step="1">
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <div class="kix-actions">
+      <button type="button" id="applyBtn" class="btn btn-apply">
+        <span class="btn-text">Apply</span>
+      </button>
+      <button type="button" id="resetBtn" class="btn btn-reset">
+        <span class="btn-text">Reset</span>
+      </button>
+    </div>
+
+    <!-- Status Feedback -->
+    <div class="kix-status" id="statusMessage">
+      <span class="status-indicator"></span>
+      <span class="status-text" id="statusText">Ready</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
